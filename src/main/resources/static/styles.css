@@ -1,0 +1,369 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #1a1a2e;
+    color: #f5f5f5;
+}
+
+header {
+    padding: 2rem;
+    border-bottom: 1px solid #2d2d4e;
+    background: #16213e;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #a855f7;
+}
+
+header p {
+    font-size: 0.85rem;
+    color: #6b6b8a;
+    margin-top: 4px;
+}
+
+main {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+h2 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #a855f7;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.room-card, .game-card {
+    background: #16213e;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #2d2d4e;
+    margin-bottom: 1.5rem;
+}
+
+.form-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+input {
+    padding: 8px 12px;
+    border: 1px solid #2d2d4e;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    flex: 1;
+    background: #1a1a2e;
+    color: #f5f5f5;
+}
+
+input:focus {
+    border-color: #a855f7;
+}
+
+button {
+    padding: 8px 20px;
+    background: #a855f7;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    background: #7c3aed;
+}
+
+button.secondary {
+    background: transparent;
+    color: #a855f7;
+    border: 1px solid #a855f7;
+}
+
+button.secondary:hover {
+    background: #2d2d4e;
+}
+
+.hangman-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+canvas {
+    border: 1px solid #2d2d4e;
+    border-radius: 8px;
+    background: #1a1a2e;
+}
+
+.masked-word {
+    font-size: 2rem;
+    letter-spacing: 0.5rem;
+    text-align: center;
+    font-weight: 600;
+    color: #a855f7;
+    margin-bottom: 1rem;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #6b6b8a;
+    margin-bottom: 1.5rem;
+}
+
+.keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.key {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #2d2d4e;
+    border-radius: 6px;
+    background: #16213e;
+    font-size: 14px;
+    cursor: pointer;
+    color: #f5f5f5;
+    padding: 0;
+}
+
+.key:hover {
+    background: #2d2d4e;
+    border-color: #a855f7;
+    color: #a855f7;
+}
+
+.key:disabled {
+    background: #0f0f1a;
+    color: #2d2d4e;
+    cursor: not-allowed;
+    border-color: #1a1a2e;
+}
+
+.status-banner {
+    text-align: center;
+    padding: 1rem;
+    border-radius: 8px;
+    background: #2d1f4e;
+    border: 1px solid #a855f7;
+}
+
+.status-banner p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #a855f7;
+    margin-bottom: 0.75rem;
+}
+
+.status-banner.lost {
+    background: #2d1a1a;
+    border-color: #e53935;
+}
+
+.status-banner.lost p {
+    color: #e53935;
+}* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ body {
+     font-family: 'Segoe UI', sans-serif;
+     background: #1a1a2e;
+     color: #f5f5f5;
+ }
+
+ header {
+     padding: 2rem;
+     border-bottom: 1px solid #2d2d4e;
+     background: #16213e;
+     text-align: center;
+ }
+
+ header h1 {
+     font-size: 2rem;
+     font-weight: 600;
+     color: #a855f7;
+ }
+
+ header p {
+     font-size: 0.85rem;
+     color: #6b6b8a;
+     margin-top: 4px;
+ }
+
+ main {
+     max-width: 600px;
+     margin: 2rem auto;
+     padding: 0 1.5rem;
+ }
+
+ h2 {
+     font-size: 0.95rem;
+     font-weight: 600;
+     color: #a855f7;
+     margin-bottom: 1rem;
+     text-transform: uppercase;
+     letter-spacing: 0.05em;
+ }
+
+ .room-card, .game-card {
+     background: #16213e;
+     padding: 1.5rem;
+     border-radius: 8px;
+     border: 1px solid #2d2d4e;
+     margin-bottom: 1.5rem;
+ }
+
+ .form-row {
+     display: flex;
+     gap: 8px;
+     align-items: center;
+     flex-wrap: wrap;
+ }
+
+ input {
+     padding: 8px 12px;
+     border: 1px solid #2d2d4e;
+     border-radius: 6px;
+     font-size: 14px;
+     outline: none;
+     flex: 1;
+     background: #1a1a2e;
+     color: #f5f5f5;
+ }
+
+ input:focus {
+     border-color: #a855f7;
+ }
+
+ button {
+     padding: 8px 20px;
+     background: #a855f7;
+     color: white;
+     border: none;
+     border-radius: 6px;
+     cursor: pointer;
+     font-size: 14px;
+ }
+
+ button:hover {
+     background: #7c3aed;
+ }
+
+ button.secondary {
+     background: transparent;
+     color: #a855f7;
+     border: 1px solid #a855f7;
+ }
+
+ button.secondary:hover {
+     background: #2d2d4e;
+ }
+
+ .hangman-container {
+     display: flex;
+     justify-content: center;
+     margin-bottom: 1.5rem;
+ }
+
+ canvas {
+     border: 1px solid #2d2d4e;
+     border-radius: 8px;
+     background: #1a1a2e;
+ }
+
+ .masked-word {
+     font-size: 2rem;
+     letter-spacing: 0.5rem;
+     text-align: center;
+     font-weight: 600;
+     color: #a855f7;
+     margin-bottom: 1rem;
+ }
+
+ .info-row {
+     display: flex;
+     justify-content: space-between;
+     font-size: 13px;
+     color: #6b6b8a;
+     margin-bottom: 1.5rem;
+ }
+
+ .keyboard {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 6px;
+     justify-content: center;
+     margin-bottom: 1.5rem;
+ }
+
+ .key {
+     width: 36px;
+     height: 36px;
+     border: 1px solid #2d2d4e;
+     border-radius: 6px;
+     background: #16213e;
+     font-size: 14px;
+     cursor: pointer;
+     color: #f5f5f5;
+     padding: 0;
+ }
+
+ .key:hover {
+     background: #2d2d4e;
+     border-color: #a855f7;
+     color: #a855f7;
+ }
+
+ .key:disabled {
+     background: #0f0f1a;
+     color: #2d2d4e;
+     cursor: not-allowed;
+     border-color: #1a1a2e;
+ }
+
+ .status-banner {
+     text-align: center;
+     padding: 1rem;
+     border-radius: 8px;
+     background: #2d1f4e;
+     border: 1px solid #a855f7;
+ }
+
+ .status-banner p {
+     font-size: 1.1rem;
+     font-weight: 600;
+     color: #a855f7;
+     margin-bottom: 0.75rem;
+ }
+
+ .status-banner.lost {
+     background: #2d1a1a;
+     border-color: #e53935;
+ }
+
+ .status-banner.lost p {
+     color: #e53935;
+ }

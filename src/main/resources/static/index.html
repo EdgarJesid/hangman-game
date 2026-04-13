@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahorcado</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <h1>Ahorcado</h1>
+    <p>Juego multijugador cooperativo en tiempo real</p>
+</header>
+
+<main>
+    <section class="room-card" id="roomSection">
+        <h2>Unirse a una sala</h2>
+        <div class="form-row">
+            <input type="text" id="roomId" placeholder="Código de sala (ej: sala1)" />
+            <button onclick="createGame()">Crear sala</button>
+            <button class="secondary" onclick="joinGame()">Unirse</button>
+        </div>
+    </section>
+
+    <section class="game-card" id="gameSection" style="display:none">
+        <div class="hangman-container">
+            <canvas id="hangmanCanvas" width="200" height="200"></canvas>
+        </div>
+
+        <div class="word-container">
+            <p id="maskedWord" class="masked-word"></p>
+        </div>
+
+        <div class="info-row">
+            <span>Intentos restantes: <strong id="attempts">6</strong></span>
+            <span>Letras usadas: <span id="guessedLetters">—</span></span>
+        </div>
+
+        <div class="keyboard" id="keyboard"></div>
+
+        <div class="status-banner" id="statusBanner" style="display:none">
+            <p id="statusMessage"></p>
+            <button onclick="resetGame()">Jugar de nuevo</button>
+        </div>
+    </section>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.6.1/sockjs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
