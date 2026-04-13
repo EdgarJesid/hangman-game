@@ -40,3 +40,9 @@ A diferencia del ahorcado tradicional donde un jugador elige la palabra y otro
 adivina, este juego es cooperativo — ambos jugadores adivinan juntos la misma
 palabra elegida aleatoriamente por el servidor. Esto permite que el juego
 comience inmediatamente sin necesidad de turnos de configuración.
+
+## Preview
+
+![Ahorcado Multijugador Creacio de Sala](assets/previewSala.png)
+![Ahorcado Multijugador Jugando la Sala](assets/previewGame.png)
+ 
